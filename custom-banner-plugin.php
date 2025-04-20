@@ -9,9 +9,17 @@ Author: PRAKRITI DUTTA
 // ========== 1. Display Banner in Footer ==========
 add_action('wp_footer', 'cbp_display_banner');
 function cbp_display_banner() {
-    $text = get_option('cbp_banner_text', '🎉 Big Sale! Get 25% Off – Limited Time Offer! 🎉');
-    $button_text = get_option('cbp_button_text', 'Shop Now');
-    $button_link = get_option('cbp_button_link', '#');
+   $default_text = '🎉 Big Sale! Get 25% Off – Limited Time Offer! 🎉';
+$default_button_text = 'Shop Now';
+$default_button_link = '#';
+
+$text = get_option('cbp_banner_text');
+$button_text = get_option('cbp_button_text');
+$button_link = get_option('cbp_button_link');
+
+$text = !empty($text) ? $text : $default_text;
+$button_text = !empty($button_text) ? $button_text : $default_button_text;
+$button_link = !empty($button_link) ? $button_link : $default_button_link;
 
     echo '
     <div id="custom-banner">
