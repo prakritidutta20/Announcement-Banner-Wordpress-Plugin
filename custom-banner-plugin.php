@@ -11,7 +11,7 @@ add_action('wp_footer', 'cbp_display_banner');
 function cbp_display_banner() {
    $default_text = '🎉 Big Sale! Get 25% Off – Limited Time Offer! 🎉';
 $default_button_text = 'Shop Now';
-$default_button_link = '#';
+$default_button_link = 'prakritidutta20.wordpress.com';
 
 $text = get_option('cbp_banner_text');
 $button_text = get_option('cbp_button_text');
